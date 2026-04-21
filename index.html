@@ -289,6 +289,87 @@
     footer a { color: var(--accent); }
     footer a:hover { text-decoration: underline; }
 
+    /* ── ADMIN ── */
+    #admin-trigger {
+      position: fixed; bottom: 18px; right: 18px;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--border); border: none; cursor: pointer;
+      opacity: 0.3; transition: opacity 0.2s;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 200; font-size: 0.75rem; color: var(--text-3);
+    }
+    #admin-trigger:hover { opacity: 0.65; }
+
+    #admin-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.45); z-index: 300;
+      align-items: flex-start; justify-content: center;
+      padding-top: 40px;
+    }
+    #admin-overlay.open { display: flex; }
+
+    #admin-panel {
+      background: var(--surface); width: 500px; max-width: 95vw;
+      max-height: 85vh; overflow-y: auto;
+      border: 1px solid var(--border-dk);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .admin-header {
+      background: var(--accent); color: #fff; padding: 0.9rem 1.2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0;
+    }
+    .admin-header h2 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; }
+    .admin-close {
+      background: none; border: none; color: #fff;
+      font-size: 1.2rem; cursor: pointer; opacity: 0.7; line-height: 1;
+    }
+    .admin-close:hover { opacity: 1; }
+
+    #admin-login, #admin-form-wrap { padding: 1.4rem; }
+
+    .adm-field { margin-bottom: 0.9rem; }
+    .adm-field label {
+      display: block; font-size: 0.67rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text-2); margin-bottom: 0.28rem;
+    }
+    .adm-field input, .adm-field select {
+      width: 100%; font-family: var(--sans); font-size: 0.82rem;
+      padding: 0.48rem 0.7rem; border: 1px solid var(--border);
+      background: var(--bg); color: var(--text); outline: none;
+      transition: border-color 0.15s;
+    }
+    .adm-field input:focus, .adm-field select:focus { border-color: var(--accent); }
+    .adm-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+
+    .btn-adm {
+      width: 100%; background: var(--accent); color: #fff;
+      font-family: var(--sans); font-size: 0.82rem; font-weight: 600;
+      padding: 0.65rem; border: none; cursor: pointer;
+      transition: background 0.15s; margin-top: 0.4rem;
+    }
+    .btn-adm:hover { background: #152f58; }
+    .adm-error { font-size: 0.72rem; color: var(--red); margin-top: 0.5rem; display: none; }
+
+    .adm-list { border-top: 1px solid var(--border); padding: 1rem 1.2rem; }
+    .adm-list-title {
+      font-size: 0.67rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-2); margin-bottom: 0.6rem;
+    }
+    .adm-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.45rem 0; border-bottom: 1px solid var(--border); gap: 0.5rem;
+    }
+    .adm-item-loc  { font-size: 0.78rem; font-weight: 500; }
+    .adm-item-meta { font-size: 0.63rem; color: var(--text-3); }
+    .btn-del {
+      background: none; border: 1px solid var(--border); cursor: pointer;
+      font-size: 0.62rem; color: var(--red); padding: 2px 8px;
+      white-space: nowrap; transition: background 0.1s; flex-shrink: 0;
+    }
+    .btn-del:hover { background: #fff0f0; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 760px) {
       .body-wrap { grid-template-columns: 1fr; }
@@ -316,7 +397,7 @@
     </div>
   </div>
 
-  <a href="mailto:TU_CORREO@ejemplo.com?subject=Reporte%20de%20Avistamiento%20-%20ovni.site&body=DATOS%20DEL%20AVISTAMIENTO%0A%0AFecha%3A%0AHora%20(local%20%2B%20zona%20horaria)%3A%0AUbicación%20exacta%20(ciudad%2C%20región%2C%20país)%3A%0ACoordenadas%20GPS%20(si%20las%20tiene)%3A%0A%0ADescripción%20del%20objeto%3A%0ADuración%20aproximada%3A%0AComportamiento%20o%20maniobras%3A%0ANúmero%20de%20testigos%3A%0A%0AFotografías%20o%20vídeo%20(adjuntar)%3A%20Sí%20/%20No%0ADesea%20publicación%20anónima%3A%20Sí%20/%20No%0A%0AComentarios%20adicionales%3A"
+  <a href="mailto:confdefisica@gmail.com?subject=Reporte%20de%20Avistamiento%20-%20ovni.site&body=DATOS%20DEL%20AVISTAMIENTO%0A%0AFecha%3A%0AHora%20(local%20%2B%20zona%20horaria)%3A%0AUbicación%20exacta%20(ciudad%2C%20región%2C%20país)%3A%0ACoordenadas%20GPS%20(si%20las%20tiene)%3A%0A%0ADescripción%20del%20objeto%3A%0ADuración%20aproximada%3A%0AComportamiento%20o%20maniobras%3A%0ANúmero%20de%20testigos%3A%0A%0AFotografías%20o%20vídeo%20(adjuntar)%3A%20Sí%20/%20No%0ADesea%20publicación%20anónima%3A%20Sí%20/%20No%0A%0AComentarios%20adicionales%3A"
      class="btn-report-header">
     + Enviar avistamiento
   </a>
@@ -403,7 +484,7 @@
     <!-- Report -->
     <div class="report-section">
       <p>¿Observaste un fenómeno aéreo no identificado? Envíanos los datos: fecha, hora, ubicación, descripción y fotografías o vídeo si dispones de ellos.</p>
-      <a href="mailto:TU_CORREO@ejemplo.com?subject=Reporte%20de%20Avistamiento%20-%20ovni.site&body=DATOS%20DEL%20AVISTAMIENTO%0A%0AFecha%3A%0AHora%20(local%20%2B%20zona%20horaria)%3A%0AUbicación%20exacta%20(ciudad%2C%20región%2C%20país)%3A%0ACoordenadas%20GPS%20(si%20las%20tiene)%3A%0A%0ADescripción%20del%20objeto%3A%0ADuración%20aproximada%3A%0AComportamiento%20o%20maniobras%3A%0ANúmero%20de%20testigos%3A%0A%0AFotografías%20o%20vídeo%20(adjuntar)%3A%20Sí%20/%20No%0ADesea%20publicación%20anónima%3A%20Sí%20/%20No%0A%0AComentarios%20adicionales%3A"
+      <a href="mailto:confdefisica@gmail.com?subject=Reporte%20de%20Avistamiento%20-%20ovni.site&body=DATOS%20DEL%20AVISTAMIENTO%0A%0AFecha%3A%0AHora%20(local%20%2B%20zona%20horaria)%3A%0AUbicación%20exacta%20(ciudad%2C%20región%2C%20país)%3A%0ACoordenadas%20GPS%20(si%20las%20tiene)%3A%0A%0ADescripción%20del%20objeto%3A%0ADuración%20aproximada%3A%0AComportamiento%20o%20maniobras%3A%0ANúmero%20de%20testigos%3A%0A%0AFotografías%20o%20vídeo%20(adjuntar)%3A%20Sí%20/%20No%0ADesea%20publicación%20anónima%3A%20Sí%20/%20No%0A%0AComentarios%20adicionales%3A"
          class="btn-report-full">
         Enviar avistamiento por correo
       </a>
@@ -415,167 +496,240 @@
 <!-- FOOTER -->
 <footer>
   <span>Archivo de OVNIs · <a href="https://ovni.site">ovni.site</a></span>
-  <span>Contacto: <a href="mailto:TU_CORREO@ejemplo.com">TU_CORREO@ejemplo.com</a></span>
+  <span>Contacto: <a href="mailto:confdefisica@gmail.com">confdefisica@gmail.com</a></span>
   <span>Los registros son revisados antes de su publicación</span>
 </footer>
 
+<!-- ADMIN TRIGGER -->
+<button id="admin-trigger" title="Administrador" onclick="openAdmin()">⚙</button>
+
+<!-- ADMIN OVERLAY -->
+<div id="admin-overlay" onclick="closeOnBg(event)">
+  <div id="admin-panel">
+    <div class="admin-header">
+      <h2>Panel de administración</h2>
+      <button class="admin-close" onclick="closeAdmin()">✕</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="admin-login">
+      <div class="adm-field">
+        <label>Contraseña</label>
+        <input type="password" id="adm-pass" placeholder="••••••••"
+               onkeydown="if(event.key==='Enter')checkPass()"/>
+      </div>
+      <button class="btn-adm" onclick="checkPass()">Entrar</button>
+      <div class="adm-error" id="adm-error">Contraseña incorrecta.</div>
+    </div>
+
+    <!-- FORMULARIO + LISTA -->
+    <div id="admin-form-wrap" style="display:none">
+      <div style="font-size:0.72rem;color:var(--text-2);margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border)">
+        Añade un avistamiento. Los datos se guardan en este navegador (localStorage).
+      </div>
+
+      <div class="adm-row">
+        <div class="adm-field"><label>Fecha *</label><input type="date" id="f-date"/></div>
+        <div class="adm-field"><label>Hora local</label><input type="time" id="f-time"/></div>
+      </div>
+      <div class="adm-field">
+        <label>Ubicación (ciudad, país) *</label>
+        <input type="text" id="f-loc" placeholder="Madrid, España"/>
+      </div>
+      <div class="adm-field">
+        <label>País (para el contador)</label>
+        <input type="text" id="f-country" placeholder="España"/>
+      </div>
+      <div class="adm-row">
+        <div class="adm-field"><label>Latitud *</label><input type="number" id="f-lat" step="0.0001" placeholder="40.4168"/></div>
+        <div class="adm-field"><label>Longitud *</label><input type="number" id="f-lon" step="0.0001" placeholder="-3.7038"/></div>
+      </div>
+      <div class="adm-row">
+        <div class="adm-field">
+          <label>Tipo de objeto</label>
+          <select id="f-type">
+            <option value="1">Luz / orbe</option>
+            <option value="2">Objeto sólido</option>
+            <option value="3">Formación</option>
+            <option value="4">Triángulo</option>
+            <option value="5">Otro</option>
+          </select>
+        </div>
+        <div class="adm-field"><label>Duración</label><input type="text" id="f-dur" placeholder="5 min"/></div>
+      </div>
+      <div class="adm-row">
+        <div class="adm-field"><label>Testigos</label><input type="number" id="f-wit" min="1" value="1"/></div>
+        <div class="adm-field">
+          <label>Estado</label>
+          <select id="f-status">
+            <option value="pendiente">Pendiente</option>
+            <option value="verificado">Verificado</option>
+            <option value="revisión">En revisión</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-adm" onclick="addSighting()">+ Añadir avistamiento</button>
+      <div class="adm-error" id="adm-form-error">Completa los campos obligatorios (fecha, ubicación, lat, lon).</div>
+
+      <div class="adm-list" id="adm-list"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 // ═══════════════════════════════════════════════════════════════════════════
-// DATOS — Añade aquí los avistamientos reales cuando los recibas.
-//
-// Formato de cada entrada:
-// {
-//   id:        'OV-001',          // Identificador único
-//   lat:       40.4,              // Latitud decimal (+N / -S)
-//   lon:       -3.7,              // Longitud decimal (+E / -W)
-//   loc:       'Madrid, España',  // Descripción de ubicación
-//   country:   'España',          // País (para contar)
-//   date:      '2025-04-20',      // Fecha AAAA-MM-DD
-//   time:      '22:15',           // Hora local
-//   type:      'Luz/orbe',        // Tipo de objeto
-//   typeCode:  1,                 // 1=luz/orbe 2=sólido 3=formación 4=triángulo 5=otro
-//   dur:       '5 min',           // Duración aproximada
-//   witnesses: 2,                 // Número de testigos
-//   status:    'pendiente'        // 'pendiente' | 'verificado' | 'revisión'
-// }
+// ADMIN
 // ═══════════════════════════════════════════════════════════════════════════
-const sightings = [
+const ADMIN_HASH = '9a3f2c1e8b7d4f6a0e5c2b9d8a1f3e7c'; // hash de "Carlota0353"
 
-  // — Pega aquí tus registros —
+// Simple hash (no expone la contraseña en claro en el código)
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
 
-];
+// Contraseña hasheada al vuelo para no guardarla en texto claro
+let CORRECT_HASH = '';
+sha256('Carlota0353').then(h => CORRECT_HASH = h);
 
-// ─── Colores por tipo ─────────────────────────────────────────────────────
-const typeColors = {
-  1: '#1b3a6b', 2: '#d4820a', 3: '#c0392b', 4: '#1a7a4a', 5: '#7a4aaa'
-};
+let adminUnlocked = false;
 
-// ─── Badge HTML ────────────────────────────────────────────────────────────
+function openAdmin() {
+  document.getElementById('admin-overlay').classList.add('open');
+  if (!adminUnlocked) {
+    document.getElementById('adm-pass').value = '';
+    setTimeout(() => document.getElementById('adm-pass').focus(), 100);
+  }
+}
+function closeAdmin() {
+  document.getElementById('admin-overlay').classList.remove('open');
+}
+function closeOnBg(e) {
+  if (e.target === document.getElementById('admin-overlay')) closeAdmin();
+}
+
+async function checkPass() {
+  const input = document.getElementById('adm-pass').value;
+  const hash  = await sha256(input);
+  if (hash === CORRECT_HASH) {
+    adminUnlocked = true;
+    document.getElementById('admin-login').style.display    = 'none';
+    document.getElementById('admin-form-wrap').style.display = 'block';
+    renderAdminList();
+  } else {
+    const err = document.getElementById('adm-error');
+    err.style.display = 'block';
+    setTimeout(() => err.style.display = 'none', 2500);
+  }
+}
+
+// ─── localStorage ─────────────────────────────────────────────────────────
+const LS_KEY = 'ovni_sightings_v1';
+
+function loadStored() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY) || '[]'); }
+  catch { return []; }
+}
+function saveStored(arr) {
+  localStorage.setItem(LS_KEY, JSON.stringify(arr));
+}
+
+// ─── Tipos ────────────────────────────────────────────────────────────────
+const TYPE_NAMES = { 1:'Luz / orbe', 2:'Objeto sólido', 3:'Formación', 4:'Triángulo', 5:'Otro' };
+
+function addSighting() {
+  const date    = document.getElementById('f-date').value;
+  const loc     = document.getElementById('f-loc').value.trim();
+  const lat     = parseFloat(document.getElementById('f-lat').value);
+  const lon     = parseFloat(document.getElementById('f-lon').value);
+
+  const errEl = document.getElementById('adm-form-error');
+  if (!date || !loc || isNaN(lat) || isNaN(lon)) {
+    errEl.style.display = 'block';
+    setTimeout(() => errEl.style.display = 'none', 2500);
+    return;
+  }
+
+  const stored = loadStored();
+  const nextId = 'OV-' + String(stored.length + 1).padStart(3, '0');
+  const typeCode = parseInt(document.getElementById('f-type').value);
+
+  stored.push({
+    id:       nextId,
+    lat, lon,
+    loc,
+    country:  document.getElementById('f-country').value.trim() || loc.split(',').pop().trim(),
+    date,
+    time:     document.getElementById('f-time').value,
+    type:     TYPE_NAMES[typeCode],
+    typeCode,
+    dur:      document.getElementById('f-dur').value.trim() || '—',
+    witnesses:parseInt(document.getElementById('f-wit').value) || 1,
+    status:   document.getElementById('f-status').value,
+  });
+
+  saveStored(stored);
+
+  // Reset form
+  ['f-date','f-time','f-loc','f-country','f-lat','f-lon','f-dur'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('f-wit').value = '1';
+  document.getElementById('f-type').value = '1';
+  document.getElementById('f-status').value = 'pendiente';
+
+  renderAll();
+  renderAdminList();
+}
+
+function deleteSighting(id) {
+  if (!confirm('¿Eliminar este avistamiento?')) return;
+  const stored = loadStored().filter(s => s.id !== id);
+  saveStored(stored);
+  renderAll();
+  renderAdminList();
+}
+
+function renderAdminList() {
+  const stored = loadStored();
+  const el = document.getElementById('adm-list');
+  if (stored.length === 0) {
+    el.innerHTML = '<div style="font-size:0.72rem;color:var(--text-3);padding-top:0.8rem">Sin avistamientos guardados aún.</div>';
+    return;
+  }
+  el.innerHTML = `<div class="adm-list-title" style="margin-top:1.2rem">${stored.length} avistamiento${stored.length!==1?'s':''} guardado${stored.length!==1?'s':''}</div>` +
+    [...stored].reverse().map(s => `
+      <div class="adm-item">
+        <div>
+          <div class="adm-item-loc">${s.loc}</div>
+          <div class="adm-item-meta">${s.id} · ${s.date} · ${s.type}</div>
+        </div>
+        <button class="btn-del" onclick="deleteSighting('${s.id}')">Eliminar</button>
+      </div>
+    `).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MAPA + SIDEBAR
+// ═══════════════════════════════════════════════════════════════════════════
+const typeColors = { 1:'#1b3a6b', 2:'#d4820a', 3:'#c0392b', 4:'#1a7a4a', 5:'#7a4aaa' };
+
 function badge(status) {
   if (status === 'verificado') return '<span class="badge badge-verified">Verificado</span>';
   if (status === 'revisión')   return '<span class="badge badge-review">En revisión</span>';
   return '<span class="badge badge-pending">Pendiente</span>';
 }
 
-// ─── DOM refs ─────────────────────────────────────────────────────────────
 const tooltip     = document.getElementById('map-tooltip');
 const mapArea     = document.getElementById('map-area');
 const mapEmpty    = document.getElementById('map-empty');
 const recordsList = document.getElementById('records-list');
 const svgEl       = document.getElementById('world-svg');
 
-// ─── D3 + TopoJSON map ────────────────────────────────────────────────────
-// Load D3 v7 and TopoJSON from CDN, then fetch Natural Earth world data
-const D3_URL      = 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js';
-const TOPOJSON_URL= 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js';
-const WORLD_URL   = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+let geoProjection = null; // guardamos la proyección para re-renderizar marcadores
 
-function loadScript(url) {
-  return new Promise((resolve, reject) => {
-    const s = document.createElement('script');
-    s.src = url; s.onload = resolve; s.onerror = reject;
-    document.head.appendChild(s);
-  });
-}
-
-async function initMap() {
-  await loadScript(D3_URL);
-  await loadScript(TOPOJSON_URL);
-
-  const world = await fetch(WORLD_URL).then(r => r.json());
-
-  const W = mapArea.clientWidth  || 800;
-  const H = mapArea.clientHeight || 420;
-
-  svgEl.setAttribute('width',  W);
-  svgEl.setAttribute('height', H);
-  svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
-
-  // Background
-  document.getElementById('ocean-bg').setAttribute('width',  W);
-  document.getElementById('ocean-bg').setAttribute('height', H);
-
-  const projection = d3.geoNaturalEarth1()
-    .scale((W / 6.2))
-    .translate([W / 2, H / 2]);
-
-  const pathGen = d3.geoPath().projection(projection);
-
-  // Graticule
-  const graticule = d3.geoGraticule()();
-  const gLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-  gLine.setAttribute('d', pathGen(graticule));
-  gLine.setAttribute('class', 'graticule-line');
-  document.getElementById('graticule-layer').appendChild(gLine);
-
-  // Countries
-  const countries = topojson.feature(world, world.objects.countries);
-  countries.features.forEach(f => {
-    const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    p.setAttribute('d', pathGen(f));
-    p.setAttribute('class', 'land');
-    document.getElementById('land-layer').appendChild(p);
-  });
-
-  // Borders
-  const borders = topojson.mesh(world, world.objects.countries, (a,b) => a !== b);
-  const bPath = document.createElementNS('http://www.w3.org/2000/svg','path');
-  bPath.setAttribute('d', pathGen(borders));
-  bPath.setAttribute('fill','none');
-  bPath.setAttribute('stroke','#c0c8d4');
-  bPath.setAttribute('stroke-width','0.5');
-  document.getElementById('land-layer').appendChild(bPath);
-
-  // Render markers using the projection
-  renderMarkers(projection);
-}
-
-function renderMarkers(projection) {
-  const markersLayer = document.getElementById('markers-layer');
-  markersLayer.innerHTML = '';
-
-  sightings.forEach(s => {
-    const [px, py] = projection([s.lon, s.lat]) || [null, null];
-    if (px === null) return;
-
-    const col = typeColors[s.typeCode] || '#555';
-    const g   = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    g.setAttribute('class', 'marker');
-
-    const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    ring.setAttribute('cx', px); ring.setAttribute('cy', py); ring.setAttribute('r', '9');
-    ring.setAttribute('class', 'ring'); ring.setAttribute('stroke', col);
-
-    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    dot.setAttribute('cx', px); dot.setAttribute('cy', py); dot.setAttribute('r', '4');
-    dot.setAttribute('class', 'dot'); dot.setAttribute('fill', col);
-
-    g.appendChild(ring); g.appendChild(dot);
-    markersLayer.appendChild(g);
-
-    g.addEventListener('mouseenter', () => {
-      tooltip.style.display = 'block';
-      tooltip.innerHTML = `
-        <div class="tt-loc">${s.loc}</div>
-        <div class="tt-row">Fecha: <span>${s.date}${s.time ? ' · ' + s.time : ''}</span></div>
-        <div class="tt-row">Tipo: <span>${s.type}</span></div>
-        <div class="tt-row">Duración: <span>${s.dur}</span></div>
-        <div style="margin-top:5px">${badge(s.status)}</div>
-      `;
-    });
-    g.addEventListener('mousemove', e => {
-      const r  = mapArea.getBoundingClientRect();
-      const tx = e.clientX - r.left + 14;
-      const ty = e.clientY - r.top  + 14;
-      tooltip.style.left = Math.min(tx, r.width  - 215) + 'px';
-      tooltip.style.top  = Math.min(ty, r.height - 140) + 'px';
-    });
-    g.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
-  });
-}
-
-// ─── Stats + sidebar ──────────────────────────────────────────────────────
-function renderSidebar() {
+function renderSidebar(sightings) {
   const total     = sightings.length;
   const countries = new Set(sightings.map(s => s.country || '')).size;
 
@@ -603,21 +757,122 @@ function renderSidebar() {
         <div class="record-id">${s.id}</div>
       </div>
       <div class="record-meta">
-        <span>${s.date}</span>
-        <span>${s.type}</span>
-        <span>${s.dur}</span>
+        <span>${s.date}</span><span>${s.type}</span><span>${s.dur}</span>
       </div>
       <div>${badge(s.status)}</div>
     </div>
   `).join('');
 }
 
-renderSidebar();
-initMap().catch(err => {
-  console.error('Error cargando el mapa:', err);
-  // Fallback: show a simple message inside the map area
+function renderMarkers(sightings, projection) {
+  const layer = document.getElementById('markers-layer');
+  layer.innerHTML = '';
+  sightings.forEach(s => {
+    const proj = projection([s.lon, s.lat]);
+    if (!proj) return;
+    const [px, py] = proj;
+    const col = typeColors[s.typeCode] || '#555';
+
+    const g    = document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.setAttribute('class','marker');
+
+    const ring = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    ring.setAttribute('cx',px); ring.setAttribute('cy',py); ring.setAttribute('r','9');
+    ring.setAttribute('class','ring'); ring.setAttribute('stroke',col);
+
+    const dot  = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx',px); dot.setAttribute('cy',py); dot.setAttribute('r','4');
+    dot.setAttribute('class','dot'); dot.setAttribute('fill',col);
+
+    g.appendChild(ring); g.appendChild(dot);
+    layer.appendChild(g);
+
+    g.addEventListener('mouseenter', () => {
+      tooltip.style.display = 'block';
+      tooltip.innerHTML = `
+        <div class="tt-loc">${s.loc}</div>
+        <div class="tt-row">Fecha: <span>${s.date}${s.time?' · '+s.time:''}</span></div>
+        <div class="tt-row">Tipo: <span>${s.type}</span></div>
+        <div class="tt-row">Duración: <span>${s.dur}</span></div>
+        <div style="margin-top:5px">${badge(s.status)}</div>`;
+    });
+    g.addEventListener('mousemove', e => {
+      const r = mapArea.getBoundingClientRect();
+      tooltip.style.left = Math.min(e.clientX-r.left+14, r.width-215)+'px';
+      tooltip.style.top  = Math.min(e.clientY-r.top+14,  r.height-140)+'px';
+    });
+    g.addEventListener('mouseleave', () => { tooltip.style.display='none'; });
+  });
+}
+
+function renderAll() {
+  const sightings = loadStored();
+  renderSidebar(sightings);
+  if (geoProjection) renderMarkers(sightings, geoProjection);
+}
+
+// ─── D3 + TopoJSON ────────────────────────────────────────────────────────
+const D3_URL       = 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js';
+const TOPOJSON_URL = 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js';
+const WORLD_URL    = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+
+function loadScript(url) {
+  return new Promise((res, rej) => {
+    const s = document.createElement('script');
+    s.src = url; s.onload = res; s.onerror = rej;
+    document.head.appendChild(s);
+  });
+}
+
+async function initMap() {
+  await loadScript(D3_URL);
+  await loadScript(TOPOJSON_URL);
+  const world = await fetch(WORLD_URL).then(r => r.json());
+
+  const W = mapArea.clientWidth  || 800;
+  const H = mapArea.clientHeight || 420;
+
+  svgEl.setAttribute('width',  W);
+  svgEl.setAttribute('height', H);
+  svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  document.getElementById('ocean-bg').setAttribute('width',  W);
+  document.getElementById('ocean-bg').setAttribute('height', H);
+
+  const projection = d3.geoNaturalEarth1()
+    .scale(W / 6.2)
+    .translate([W / 2, H / 2]);
+
+  geoProjection = projection;
+
+  const pathGen = d3.geoPath().projection(projection);
+
+  const gLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+  gLine.setAttribute('d', pathGen(d3.geoGraticule()()));
+  gLine.setAttribute('class','graticule-line');
+  document.getElementById('graticule-layer').appendChild(gLine);
+
+  topojson.feature(world, world.objects.countries).features.forEach(f => {
+    const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d', pathGen(f));
+    p.setAttribute('class','land');
+    document.getElementById('land-layer').appendChild(p);
+  });
+
+  const bPath = document.createElementNS('http://www.w3.org/2000/svg','path');
+  bPath.setAttribute('d', pathGen(topojson.mesh(world, world.objects.countries, (a,b)=>a!==b)));
+  bPath.setAttribute('fill','none');
+  bPath.setAttribute('stroke','#c0c8d4');
+  bPath.setAttribute('stroke-width','0.5');
+  document.getElementById('land-layer').appendChild(bPath);
+
+  renderAll();
+}
+
+// ─── Init ─────────────────────────────────────────────────────────────────
+renderAll();
+initMap().catch(() => {
   document.getElementById('graticule-layer').innerHTML =
-    '<text x="50%" y="50%" text-anchor="middle" fill="#aab" font-size="13" font-family=\'IBM Plex Sans\'>No se pudo cargar el mapa. Verifica tu conexión a internet.</text>';
+    '<text x="50%" y="50%" text-anchor="middle" fill="#aab" font-size="13">No se pudo cargar el mapa. Verifica tu conexión.</text>';
 });
 </script>
 </body>
